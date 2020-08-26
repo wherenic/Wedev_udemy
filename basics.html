@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap Basics</title>
+        <!-- this is the CDN code that connects us to the main library of bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <!-- this style section overrides existing bootstrap stylings-->
+    <style>
+        .pink{
+            background: pink;
+            border: 1px solid purple;
+        }
+
+        .bold{
+            font-weight: bold;
+        }
+    </style>
+    <body>
+        
+
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Botostrap Basics for Dummies</h1>
+                <p>I'm going to use the course I am on right now and pen down my notes on here!</p>
+                <hr class="my-4">
+                <p>First thing first! This big ass box! Is called a jumbotorn. It is essentially something you would use when you want everyone in the world to notice this line of text </p>
+            </div>
+            <h2> &#x1F4CC; Why use bootstrap?</h2>
+            <p> Bootstrap is a framework where all the compnoents that you see in websites have been pre-coded and all you have to go is "yoohoo!" I would like you, button, to exist in this part of the page and it will show up</p>
+            <p class="bold"> There are 2 components to this: </p>
+            <ol> 
+                <li>CSS file</li>
+                <li>Javascript file</li>
+            </ol>
+
+            <h3> &#x1F4CC; Introducing Buttons</h3>
+            <p> As you can see, there are so many different types of buttons.
+                I have first hand experience in building design systems and I know just how many properties are associated with a button
+                You have states, shadows, responsiveness, padding ,margins, curvature, link references etc to worry about.
+                <br> <br>
+                But what is so great about bootstrap is that it does all of that for you! All you have to do is reference is css file to retrive the classes and bam done.
+            </p>
+            <button class="btn btn-success btn-xs">click me</button>
+            <button class="btn btn-success btn-md">click me</button>
+            <button class="btn btn-warning btn-lg">click me</button>
+            <a href="http://www.getbootstrap.com" class="btn btn-info btn-lg active">bootstrap docs</a>
+
+            <h3> &#x1F4CC; Introducing forms</h3>
+            <p> 2 key element sof this is the form-group for easy visual grouping and then fomr-control which is the class that inherits the stylings for your forms. Subtle styling and all states have been accounted for.</p>
+
+            <form>
+                <div class="form-group">
+                    <!-- what form group does is that is spaces out your form inputs from one another very nicely else it will be stuck together
+                    This helps with visual grouping
+                    -->
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  <!-- The form-control class is absolutely crucial in adopting the styles that have been set by bootstrap.
+                    This is so that we don't end up with ugly un-styled form componetns
+                    -->
+
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">File input</label>
+                  <input type="file" id="exampleInputFile">
+                  <p class="help-block">Inform the user on the type of supporting documents that could potentially exists here.</p>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Remember me!
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+
+            <h3> &#x1F4CC; Introducing Navigation Bars</h3>
+            <p> I guess this is pretty good as a base when you are thinking of navigation on your site. As you can see there are a bunch of different functions that you can employ on the site.
+                <br> <br>
+                You should be calling your div container class only after initializing the navbar-header this is because if not the grey-ish background will not be flushed to the ends of the page and look very cut off.
+                <br><br>
+                Try resizing the screen to understand how the navigation bar works. When you hit a certain breakpoint, the items that is displayed in the full screen will collapsed and move into a hamburger menu
+                <br><br>
+                Pay close attention to the <code>data-target</code> section as well as the <code>id</code> section which is important when you are linking the characteristics of a component to what should exist within it.
+            </p>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Now that the content is within a container, it is not flushed all the way to the side which makes it extremely helpful-->
+                    <!-- container fluid just flushed it all the way to the side therefore not helpful.-->
+
+
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="https://nicolelianjf.gitbook.io/portfolio/">@wherenic</a>
+                  </div>
+              
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                      <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                      <li><a href="#">Link</a></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#">One more separated link</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                      </div>
+                      <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#">Link</a></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+              </nav>
+
+
+
+
+
+
+            <h3> &#x1F4CC; Introducing Grids</h3>
+            <p> Before diving into the specifics of the grids, it is important to understand what breakpoints are.
+                These are especially important when you are building your web to be mobile responsive.
+                These <code>breakpoints</code> are extremely important to pay attention to as they are the points in which your layout would change.
+                There is a business case for this! Take your time to resize the window and look at the inspect panel to view the different types of grids.
+            </p>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                    <div class="col-lg-1 col-md-2 col-sm-4 pink">col lg 1</div>
+                </div>
+            </div>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 pink">
+                        <div class="row">
+                            <div class="col-md-6 pink">smol grid</div>
+                            <div class="col-md-6 pink">smol grid</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 pink">col lg 4</div>
+                    <div class="col-md-3 col-sm-6 pink">col lg 4</div>
+                    <div class="col-md-3 col-sm-6 pink">col lg 4</div>
+                </div>
+            </div>
+
+
+            
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+
+
+        </div>
+
+
+
+        
+        
+
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+</html>
